@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赤峰山下</title>
+    <link rel="stylesheet" type="text/css" href={% static "stark/bootstrap/css/bootstrap.css" %}/>
+    <script language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<div class="container">
+    <h1>列表页面</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+            {% for item in head_list %}
+                <th>{{ item }}</th>
+            {% endfor %}
+
+        </tr>
+    </thead>
+    <tbody>
+       {% for obj in data_list %}
+       <tr>{% for col in obj %}
+    <td>{{ col }}</td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>
